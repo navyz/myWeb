@@ -24,7 +24,7 @@ dependencies {
 }
 
 jacoco {
-    toolVersion = "0.7.9"
+    toolVersion = "0.8.0"
     reportsDir = file("$buildDir/reports/jacoco")
 }
 jacocoTestReport {
@@ -34,6 +34,8 @@ jacocoTestReport {
         html.destination file("${buildDir}/jacocoHtml")
     }
 }
+
+
 jacocoTestCoverageVerification {
     violationRules {
         rule {
@@ -55,6 +57,7 @@ jacocoTestCoverageVerification {
         }
     }
 }
+
 
 test {
     jacoco {
