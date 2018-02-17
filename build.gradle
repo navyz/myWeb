@@ -7,15 +7,22 @@ group 'sonlmz'
 version '1.0'
 
 apply plugin: 'war'
+apply plugin: 'java'
 apply plugin: 'java-gradle-plugin'
+apply plugin: 'groovy'
+apply plugin: "jacoco"
 
 repositories {
     mavenCentral()
 }
 
-
-
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile 'org.codehaus.groovy:groovy-test:2.4.3'
+    compile 'com.google.guava:guava:21.0'
+
 }
 
+jacoco {
+    reportsDir = file("build/tmp/jacoco.exec")
+}
