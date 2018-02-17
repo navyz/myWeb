@@ -10,12 +10,12 @@ import static org.junit.Assert.*;
 public class MyBase64Test {
     @Test
     public void encode() throws Exception {
-        assert MyBase64.encode("123") == "MTIz";
+        assertEquals(MyBase64.encode("123"), "MTIz");
     }
 
     @Test
     public void decode() throws Exception {
-        assert MyBase64.decode("MTIz") == "123";
+        assertEquals(MyBase64.decode("MTIz"), "123");
     }
 
 }
