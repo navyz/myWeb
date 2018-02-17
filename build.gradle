@@ -26,3 +26,23 @@ dependencies {
 jacoco {
     reportsDir = file("build/tmp/jacoco.exec")
 }
+
+test {
+    outputs.upToDateWhen { false }
+    reports {
+        junitXml.enabled = false
+        html.enabled = true
+    }
+}
+
+check {
+    outputs.upToDateWhen { false }
+}
+
+jacocoTestReport {
+    outputs.upToDateWhen { false }
+}
+
+compileTestJava {
+    outputs.upToDateWhen { false }
+}
