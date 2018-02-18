@@ -1,0 +1,9 @@
+1. build image
+
+gradle build docker
+
+2. run container
+
+docker run -it --rm -p 8080:8080 -t sonlmz/myweb
+
+
