@@ -1,4 +1,8 @@
-
+buildscript {
+    dependencies {
+        classpath ("gradle.plugin.com.palantir.gradle.docker:gradle-docker:0.17.2")
+    }
+}
 plugins {
     id "org.sonarqube" version "2.6.2"
 }
@@ -11,6 +15,7 @@ apply plugin: 'java'
 apply plugin: 'java-gradle-plugin'
 apply plugin: 'groovy'
 apply plugin: "jacoco"
+apply plugin: 'com.palantir.docker'
 
 repositories {
     mavenCentral()
@@ -20,7 +25,6 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
     testCompile 'org.codehaus.groovy:groovy-test:2.4.3'
     compile 'com.google.guava:guava:21.0'
-
 }
 
 jacoco {
@@ -88,4 +92,15 @@ jacocoTestReport {
 compileTestJava {
     outputs.upToDateWhen { false }
 }
+
+war {
+    baseName = 'myweb'
+    version =  '0.1.0'
+}
+docker {
+    name "${project.group}/${war.baseName}"
+    files war.archivePath
+    buildArgs(['WAR_FILE': "${war.archiveName}"])
+}
+
 
