@@ -90,7 +90,7 @@ jacocoTestReport {
 }
 
 compileTestJava {
-    outputs.upToDateWhen { false }
+    outputs.upToDawarteWhen { false }
 }
 
 war {
