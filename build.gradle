@@ -100,7 +100,7 @@ war {
 docker {
     name "${project.group}/${war.baseName}"
     files war.archivePath
-    buildArgs(['WAR_FILE': "${war.archiveName}"])
+    //buildArgs(['WAR_FILE': "${war.archiveName}"])
 }
 
 
