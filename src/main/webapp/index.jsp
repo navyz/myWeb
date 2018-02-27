@@ -11,6 +11,6 @@
     <title>$Title$</title>
   </head>
   <body>
-  Le Minh Son.
+  The "Welcome to springboot + gradle + docker + jenkins" should be here!
   </body>
 </html>
